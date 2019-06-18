@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GoatConditioner</title>
+
+    <link rel="stylesheet" href="/static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main role="main" class="container">
+      <h1 class="mt-5">Goat Conditioner</h1>
+        <p class="lead">The air conditioner is currently <strong id="conditionerStatus" class="text-primary" style="font-size: 40px;"></strong></p>
+        <!-- blue if in desired range, yellow if 3~ degrees out of range, red if beyond that range -->
+        <h3>The current temperature is <span id="currentTemp" class="text-success" style="font-size: 140px;"></span></h3>
+        <h3>The ideal temperature is set for <strong class="text-info" style="font-size: 110px;"><span id="idealTemp" class="editable" contenteditable="true"></span>&#176;</strong></h3>
+        <br>
+        <p>The air conditioner will start when the measured temperature is <strong style="font-size: 30px;"><span id="turnOnTemp" class="editable"  contenteditable="true"></span>&#176;</strong> above the ideal temperature.</p>
+        <p>When the measured temperature is <strong style="font-size: 30px;"><span id="turnOffTemp" class="editable" contenteditable="true"></span>&#176;</strong> colder than the ideal temperature, the air conditioner will turn off.</p>
+        <br>
+        <button id="pause" type="button" class="btn btn-danger">Pause</button>
+        <br>
+        <br>
+        <!-- state sent initially from server, press and post request to server and set button to disabled
+             on server callback switch button state. on post timeout put button back. -->
+        <p><button type="button" class="btn btn-warning">Delay</button> for <span style="font-size: 20px;">30</span> minutes.</p>
+        <p><button type="button" class="btn btn-warning">Cancel</button> all external controls and resume default behaviour.</p>
+    </main>
+
+    <script src="/static/jquery-3.3.1.js"></script>
+    <script src="/static/popper.js"></script>
+    <script src="/static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js.js"></script>
+</body>
+</html>
