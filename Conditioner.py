@@ -4,7 +4,7 @@ import multiprocessing
 import time
 import RPi.GPIO as GPIO
 import atexit
-import temp_logger
+# import temp_logger
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
