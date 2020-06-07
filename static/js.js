@@ -43,6 +43,17 @@ document.getElementById("turnOffTemp").addEventListener("input", function(event)
     });
 });
 
+$(".editable").on('focus', function(event) {
+    clearInterval(updateInterval);
+    updateInterval = undefined;
+});
+
+$(".editable").on('blur keyup paste input', function(event) {
+    if (updateInterval === undefined) {
+        updateInterval = setInterval(update, 1000);
+    }
+});
+
 $("#pause").on('click', function (event) {
     console.log("pause button click");
     var button = $("#pause");
