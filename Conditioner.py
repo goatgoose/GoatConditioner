@@ -89,15 +89,15 @@ class Conditioner:
     def to_fahrenheit(c):
         return c * 1.8 + 32
 
-    def read_temp_sensor_old(self):
+    def read_temp_sensor(self):
         process = Popen("cat " + self.TEMP_SENSOR_PATH + "/w1_slave", shell=True, stdout=PIPE)
         for line in process.stdout:
             line = str(line)
             if "t=" in line:
                 return int(line[line.find("t=") + 2:line.find(" ", line.find("t="))].replace("\\n", "")) / 1000.0
 
-    def read_temp_sensor(self):
-        return temp_logger.get_temperature()
+    # def read_temp_sensor(self):
+    #     return temp_logger.get_temperature()
 
     def read_sensor_forever(self):
         while True:
