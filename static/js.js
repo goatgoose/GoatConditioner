@@ -48,7 +48,7 @@ $(".editable").on('focus', function(event) {
     updateInterval = undefined;
 });
 
-$(".editable").on('blur keyup paste input', function(event) {
+$(".editable").on('blur input', function(event) {
     if (updateInterval === undefined) {
         updateInterval = setInterval(update, 1000);
     }
